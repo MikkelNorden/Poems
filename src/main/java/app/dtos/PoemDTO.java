@@ -17,6 +17,8 @@ public class PoemDTO {
 
     @JsonProperty("id")
     Integer id;
+    @JsonProperty("title")
+    String title;
     @JsonProperty("author")
     String author;
     @JsonProperty("description")
@@ -26,6 +28,7 @@ public class PoemDTO {
 
     public PoemDTO(Poem poem) {
         this.id = poem.getId();
+        this.title = poem.getTitle();
         this.author = poem.getAuthor();
         this.description = poem.getDescription();
         this.content = poem.getContent();

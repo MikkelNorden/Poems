@@ -1,24 +1,30 @@
 package app.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Poem {
 
     @Id
     @GeneratedValue
     private int id;
+    private String title;
     private String author;
+    @Column(columnDefinition = "TEXT")
     private String description;
+    @Column(columnDefinition = "TEXT")
     private String content;
+
+    public Poem(String title, String author, String description, String content) {
+        this.title = title;
+        this.author = author;
+        this.description = description;
+        this.content = content;
+    }
 }
