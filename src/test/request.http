@@ -1,0 +1,6 @@
+### GET request to example server
+GET http://localhost:7070
+
+### GET all poems
+GET http://localhost:7070/api/v1/poems
+Accept: application/json
